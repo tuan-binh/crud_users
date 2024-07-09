@@ -22,16 +22,6 @@ import java.net.URI;
 public class UserController {
 	private final IUserService userService;
 	
-	/**
-	 * @param pageable Pageable
-	 * @param search String
-	 * @apiNote handle find all with pagination {
-	 * 	page: currPage trang hiện tại
-	 *  	size: limit số lượng phần tử của 1 trang
-	 *  	sort: viết theo tên trường dữ liệu muốn sort,ASC or DESC
-	 *  	search: tìm kiếm tương đối theo tên
-	 * }
-	 * */
 	@GetMapping
 	public ResponseEntity<Page<Users>> findAll(
 			  @PageableDefault(page = 0, size = 3, sort = "id", direction = Sort.Direction.ASC) Pageable pageable,

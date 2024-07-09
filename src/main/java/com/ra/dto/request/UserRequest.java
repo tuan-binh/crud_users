@@ -13,11 +13,13 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class UserRequest {
-	@NotEmpty(message = "name must be not null")
+	@NotEmpty(message = "name must be not empty")
 	private String name;
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dateOfBirth;
 	private Boolean gender;
+	@NotEmpty(message = "email must be not empty")
 	private String email;
+	@NotEmpty(message = "address must be not empty")
 	private String address;
 }
