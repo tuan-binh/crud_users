@@ -40,11 +40,11 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Users updateUser(UserRequest userRequest, Long updateId) throws CustomException {
 		Users userUpdate = findById(updateId);
-		userUpdate.setName(userUpdate.getName());
-		userUpdate.setEmail(userUpdate.getEmail());
+		userUpdate.setName(userRequest.getName());
+		userUpdate.setEmail(userRequest.getEmail());
 		userUpdate.setDateOfBirth(userRequest.getDateOfBirth());
 		userUpdate.setGender(userRequest.getGender());
-		userUpdate.setAddress(userUpdate.getAddress());
+		userUpdate.setAddress(userRequest.getAddress());
 		return userRepository.save(userUpdate);
 	}
 	
